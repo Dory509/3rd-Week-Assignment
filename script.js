@@ -31,15 +31,30 @@ const collectEmployees = function () {
   return employees
 
 }
+//let / var / const - creating variables
+//const value can't be changed
+//var function scope
+//let block scope
 
+
+//for/while - loop
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
+  let avgSalary  = 0
+  for(let i=0;i<employeesArray.length;i++){
+    avgSalary += employeesArray[i].salary
+  }
+  avgSalary =  avgSalary / employeesArray.length
+  console.log(`The average salary of ${employeesArray.length} employee(s) is ${avgSalary.toFixed(2)}` )
 }
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+  let randomNumber= Math.floor(Math.random() * employeesArray.length)
+  let randomEmployee = employeesArray[randomNumber]
+  console.log (`random employee: ${randomEmployee.firstName}  ${randomEmployee.lastName} with salary package ${randomEmployee.salary}`)
 }
 
 /*
